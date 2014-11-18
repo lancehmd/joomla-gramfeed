@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="3.1" client="site" method="upgrade">
+	<name>gramFeed</name>
+	<author>Lance Hammond</author>
+	<creationDate>17 Nov, 2014</creationDate>
+    <copyright>Copyright (C) 2014 Lance Hammond. All Rights Reserved</copyright>
+    <license>GNU General Public License version 2 or later; see LICENSE.txt</license>
+	<authorEmail>lancehmd@gmail.com</authorEmail>
+	<authorUrl>http://www.rwcoding.ca</authorUrl>
+	<version>1.0</version>
+	<description>A simple, but customizable, Instagram feed.</description>
+
+	<files>
+		<filename module="mod_gramfeed">mod_gramfeed.php</filename>
+		<filename>mod_gramfeed.xml</filename>
+		<filename>index.html</filename>
+		<folder>tmpl</folder>
+		<folder>js</folder>
+		<folder>css</folder>
+	</files>
+
+	<config>
+		<fields name="params">
+			<fieldset name="options" label="Options">
+                <field name="feedType" class="btn-group" type="radio" label="Type of Feed" default="hashtag" description="Choose between a feed generated from a hash tag or a specific user.">
+                    <option value="hashtag">Hashtag</option>
+				    <option value="user">User</option>
+                </field>
+				<field name="clientId" type="text" label="Client ID" description="Your Instagram Client ID. Applicable for hashtag mode." class="input-xlarge" />
+				<field name="userId" type="text" label="User ID" description="Your Instagram User ID. Applicable for user mode." class="input-small" />
+				<field name="accessToken" type="text" label="Access Token" description="Your Instagram Access Token. Applicable for user mode." class="input-xlarge" />
+				<field name="limit" type="integer" label="Limit" first="1" last="20" step="1" description="The max amount of images you want to load." />
+				<field name="imageSize" type="text" label="Image Size" default="200" description="The size of the images in pixels. (Without px)" />
+			</fieldset>
+		</fields>
+	</config>
+
+</extension>
